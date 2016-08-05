@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
-namespace Hl7.Fhir.Support
+namespace Hl7.FluentPath.Support
 {
     public static class XObjectExtensions
     {

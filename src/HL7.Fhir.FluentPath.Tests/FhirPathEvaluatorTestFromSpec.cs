@@ -23,7 +23,7 @@ using dstu2::Hl7.Fhir.Serialization;
 using System.IO;
 using Hl7.Fhir.Tests.FhirPath;
 using System.Xml;
-using Hl7.Fhir.Support;
+using Hl7.FluentPath.Support;
 using System.Xml.Linq;
 using Hl7.FluentPath.Functions;
 
@@ -106,7 +106,7 @@ public class FluentPathTests
         var npoco = new ModelNavigator(resource);
         //       FhirPathEvaluatorTest.Render(npoco);
 
-        IEnumerable<IValueProvider> actual = PathExpression.Select(expression, FhirValueList.Create(npoco));
+        IEnumerable<IValueProvider> actual = PathExpression.Select(expression, FluentValueList.Create(npoco));
         Assert.AreEqual(expected.Count(), actual.Count());
 
         expected.Zip(actual, compare).Count();
@@ -147,7 +147,7 @@ public class FluentPathTests
     {
         try
         {
-            PathExpression.Select(expression, FhirValueList.Create(new ModelNavigator(resource)));
+            PathExpression.Select(expression, FluentValueList.Create(new ModelNavigator(resource)));
             Assert.Fail();
         }
         catch(FormatException)

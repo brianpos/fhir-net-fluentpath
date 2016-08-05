@@ -7,7 +7,7 @@
  */
 
 using Hl7.FluentPath.Functions;
-using Hl7.Fhir.Support;
+using Hl7.FluentPath.Support;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -56,7 +56,7 @@ namespace Hl7.FluentPath.Expressions
             return (ctx, args) =>
             {
                 var focus = args.First()(ctx, InvokeeFactory.EmptyArgs);
-                if (propNull && !focus.Any()) return FhirValueList.Empty;
+                if (propNull && !focus.Any()) return FluentValueList.Empty;
           
                 return Typecasts.CastTo<IEnumerable<IValueProvider>>(func(Typecasts.CastTo<A>(focus)));
             };
@@ -67,11 +67,11 @@ namespace Hl7.FluentPath.Expressions
             return (ctx, args) =>
             {
                 var focus = args.First()(ctx, InvokeeFactory.EmptyArgs);
-                if (propNull && !focus.Any()) return FhirValueList.Empty;
+                if (propNull && !focus.Any()) return FluentValueList.Empty;
 
                 var newCtx = ctx.Nest(focus);             
                 var argA = args.Skip(1).First()(newCtx, InvokeeFactory.EmptyArgs);
-                if (propNull && !argA.Any()) return FhirValueList.Empty;
+                if (propNull && !argA.Any()) return FluentValueList.Empty;
 
                 return Typecasts.CastTo<IEnumerable<IValueProvider>>(func(Typecasts.CastTo<A>(focus), Typecasts.CastTo<B>(argA)));
             };
@@ -82,13 +82,13 @@ namespace Hl7.FluentPath.Expressions
             return (ctx, args) =>
             {
                 var focus = args.First()(ctx, InvokeeFactory.EmptyArgs);
-                if (propNull && !focus.Any()) return FhirValueList.Empty;
+                if (propNull && !focus.Any()) return FluentValueList.Empty;
 
                 var newCtx = ctx.Nest(focus);
                 var argA = args.Skip(1).First()(newCtx, InvokeeFactory.EmptyArgs);
-                if (propNull && !argA.Any()) return FhirValueList.Empty;
+                if (propNull && !argA.Any()) return FluentValueList.Empty;
                 var argB = args.Skip(2).First()(newCtx, InvokeeFactory.EmptyArgs);
-                if (propNull && !argB.Any()) return FhirValueList.Empty;
+                if (propNull && !argB.Any()) return FluentValueList.Empty;
 
                 return Typecasts.CastTo<IEnumerable<IValueProvider>>(func(Typecasts.CastTo<A>(focus), Typecasts.CastTo<B>(argA), Typecasts.CastTo<C>(argB)));
             };
@@ -99,15 +99,15 @@ namespace Hl7.FluentPath.Expressions
             return (ctx, args) =>
             {
                 var focus = args.First()(ctx, InvokeeFactory.EmptyArgs);
-                if (propNull && !focus.Any()) return FhirValueList.Empty;
+                if (propNull && !focus.Any()) return FluentValueList.Empty;
 
                 var newCtx = ctx.Nest(focus);
                 var argA = args.Skip(1).First()(newCtx, InvokeeFactory.EmptyArgs);
-                if (propNull && !argA.Any()) return FhirValueList.Empty;
+                if (propNull && !argA.Any()) return FluentValueList.Empty;
                 var argB = args.Skip(2).First()(newCtx, InvokeeFactory.EmptyArgs);
-                if (propNull && !argB.Any()) return FhirValueList.Empty;
+                if (propNull && !argB.Any()) return FluentValueList.Empty;
                 var argC = args.Skip(3).First()(newCtx, InvokeeFactory.EmptyArgs);
-                if (propNull && !argC.Any()) return FhirValueList.Empty;
+                if (propNull && !argC.Any()) return FluentValueList.Empty;
 
                 return Typecasts.CastTo<IEnumerable<IValueProvider>>(func(Typecasts.CastTo<A>(focus), 
                             Typecasts.CastTo<B>(argA), Typecasts.CastTo<C>(argB), Typecasts.CastTo<D>(argC)));

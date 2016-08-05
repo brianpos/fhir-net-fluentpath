@@ -11,7 +11,7 @@ using System.Collections.Generic;
 
 namespace Hl7.FluentPath
 {
-    internal static class FhirValueList
+    internal static class FluentValueList
     {
         public static IEnumerable<IValueProvider> Create(params object[] values)
         {
@@ -20,7 +20,7 @@ namespace Hl7.FluentPath
                 return values.Select(value => value == null ? null : value is IValueProvider ? (IValueProvider)value : new ConstantValue(value));
             }
             else
-                return FhirValueList.Empty;
+                return FluentValueList.Empty;
         }
 
         public static readonly IEnumerable<IValueProvider> Empty = Enumerable.Empty<IValueProvider>();

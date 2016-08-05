@@ -5,7 +5,7 @@
  * This file is licensed under the BSD 3-Clause license
  * available at https://raw.githubusercontent.com/ewoutkramer/fhir-net-api/master/LICENSE
  */
-using Hl7.Fhir.Support;
+using Hl7.FluentPath.Support;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,13 +32,13 @@ namespace Hl7.FluentPath.Expressions
             var actualArgs = new List<IEnumerable<IValueProvider>>();
 
             var focus = args.First()(context, InvokeeFactory.EmptyArgs);
-            if (!focus.Any()) return FhirValueList.Empty;
+            if (!focus.Any()) return FluentValueList.Empty;
 
             actualArgs.Add(focus);
             var newCtx = context.Nest(focus);
 
             actualArgs.AddRange(args.Skip(1).Select(a => a(newCtx, InvokeeFactory.EmptyArgs)));
-            if (actualArgs.Any(aa=>!aa.Any())) return FhirValueList.Empty;
+            if (actualArgs.Any(aa=>!aa.Any())) return FluentValueList.Empty;
 
             var entry = _scope.DynamicGet(_name, actualArgs);
 

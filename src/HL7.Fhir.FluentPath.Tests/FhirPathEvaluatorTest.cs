@@ -17,7 +17,7 @@ using Hl7.FluentPath;
 using Hl7.FluentPath.Expressions;
 using System.Diagnostics;
 using dstu2::Hl7.Fhir.Model;
-using Hl7.Fhir.Support;
+using Hl7.FluentPath.Support;
 using System.Xml.Linq;
 
 namespace Hl7.Fhir.Tests.FhirPath
@@ -41,11 +41,11 @@ namespace Hl7.Fhir.Tests.FhirPath
 
             var tpXml = System.IO.File.ReadAllText("TestData\\fp-test-patient.xml");
             var patient = parser.Parse<Patient>(tpXml);
-            testInput = FhirValueList.Create(new ModelNavigator(patient));
+            testInput = FluentValueList.Create(new ModelNavigator(patient));
            
             tpXml = System.IO.File.ReadAllText("TestData\\questionnaire-example.xml");
             var quest = parser.Parse<Questionnaire>(tpXml);
-            questionnaire = FhirValueList.Create(new ModelNavigator(quest));
+            questionnaire = FluentValueList.Create(new ModelNavigator(quest));
 
             xdoc = new XDocument(new XElement("group", new XAttribute("name", "CSharpTests")));
         }
@@ -87,7 +87,7 @@ namespace Hl7.Fhir.Tests.FhirPath
         [TestMethod, TestCategory("FhirPath")]
         public void TestDynaBinding()
         {
-            var input = FhirValueList.Create(new ConstantValue("Hello world!"), new ConstantValue(4));
+            var input = FluentValueList.Create(new ConstantValue("Hello world!"), new ConstantValue(4));
             Assert.AreEqual("ello", PathExpression.Scalar(@"$this[0].substring(1,%context[1])", input));
         }
 

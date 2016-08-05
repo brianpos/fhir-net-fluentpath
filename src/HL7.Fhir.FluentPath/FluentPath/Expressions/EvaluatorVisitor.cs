@@ -5,7 +5,7 @@
  * This file is licensed under the BSD 3-Clause license
  * available at https://raw.githubusercontent.com/ewoutkramer/fhir-net-api/master/LICENSE
  */
-using Hl7.Fhir.Support;
+using Hl7.FluentPath.Support;
 using FP = Hl7.FluentPath.Expressions;
 using System.Linq.Expressions;
 using System;
@@ -41,7 +41,7 @@ namespace Hl7.FluentPath.Expressions
 
         public override Invokee VisitNewNodeListInit(FP.NewNodeListInitExpression expression, SymbolTable scope)
         {
-            return InvokeeFactory.Return(FhirValueList.Empty);
+            return InvokeeFactory.Return(FluentValueList.Empty);
         }
 
         public override Invokee VisitVariableRef(FP.VariableRefExpression expression, SymbolTable scope)

@@ -76,7 +76,7 @@ namespace Hl7.Fhir.Tests.FhirPath
         [TestMethod, TestCategory("FhirPath")]
         public void CheckTypeDetermination()
         {
-            var values = FhirValueList.Create(1, true, "hi", 4.0m, 4.0f, PartialDateTime.Now());
+            var values = FluentValueList.Create(1, true, "hi", 4.0m, 4.0f, PartialDateTime.Now());
 
             Assert.IsInstanceOfType(values.Item(0).Single().Value, typeof(Int64));
             Assert.IsInstanceOfType(values.Item(1).Single().Value, typeof(Boolean));
@@ -90,7 +90,7 @@ namespace Hl7.Fhir.Tests.FhirPath
         [TestMethod, TestCategory("FhirPath")]
         public void TestItemSelection()
         {
-            var values = FhirValueList.Create(1, 2, 3, 4, 5, 6, 7);
+            var values = FluentValueList.Create(1, 2, 3, 4, 5, 6, 7);
 
             Assert.AreEqual((Int64)1, values.Item(0).Single().Value);
             Assert.AreEqual((Int64)3, values.Item(2).Single().Value);

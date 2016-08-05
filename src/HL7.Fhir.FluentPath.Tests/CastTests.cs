@@ -52,7 +52,7 @@ namespace Hl7.Fhir.Tests.FhirPath
         public void CastFromNull()
         {
             checkCast<object>(null, null);
-            checkCast<IEnumerable<IValueProvider>>(null, FhirValueList.Empty);
+            checkCast<IEnumerable<IValueProvider>>(null, FluentValueList.Empty);
             checkCast<IValueProvider>(null, null);
             Assert.IsFalse(Typecasts.CanCastTo(null, typeof(bool)));
             checkCast<bool?>(null, null);

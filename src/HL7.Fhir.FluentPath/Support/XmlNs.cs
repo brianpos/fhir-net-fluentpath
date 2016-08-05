@@ -6,7 +6,7 @@
  * available at https://raw.githubusercontent.com/ewoutkramer/fhir-net-api/master/LICENSE
  */
 
-using Hl7.Fhir.Support;
+using Hl7.FluentPath.Support;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -15,7 +15,7 @@ using System.Reflection;
 using System.Text;
 using System.Xml.Linq;
 
-namespace Hl7.Fhir.Support
+namespace Hl7.FluentPath.Support
 {
     public static class XmlNs
     {

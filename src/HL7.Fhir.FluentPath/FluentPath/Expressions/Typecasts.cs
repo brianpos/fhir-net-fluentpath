@@ -5,7 +5,7 @@
  * This file is licensed under the BSD 3-Clause license
  * available at https://raw.githubusercontent.com/ewoutkramer/fhir-net-api/master/LICENSE
  */
-using Hl7.Fhir.Support;
+using Hl7.FluentPath.Support;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -59,7 +59,7 @@ namespace Hl7.FluentPath.Expressions
 
         private static object any2List(object source)
         {
-            return FhirValueList.Create(source);
+            return FluentValueList.Create(source);
         }
 
         private static Cast getImplicitCast(Type from, Type to)
@@ -151,7 +151,7 @@ namespace Hl7.FluentPath.Expressions
 
             //if source == null, or unboxed source == null....
             if (to == typeof(IEnumerable<IValueProvider>))
-                return FhirValueList.Empty;
+                return FluentValueList.Empty;
             if (to.IsNullable())
                 return null;
             else

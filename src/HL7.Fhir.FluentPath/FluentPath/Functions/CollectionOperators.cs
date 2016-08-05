@@ -6,7 +6,7 @@
  * available at https://raw.githubusercontent.com/ewoutkramer/fhir-net-api/master/LICENSE
  */
 
-using Hl7.Fhir.Support;
+using Hl7.FluentPath.Support;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -86,7 +86,7 @@ namespace Hl7.FluentPath.Functions
         public static IEnumerable<IValueProvider> Navigate(this IValueProvider element, string name)
         {
             if(!(element is IElementNavigator))
-                return FhirValueList.Empty;
+                return FluentValueList.Empty;
 
             var nav = (IElementNavigator)element;
 

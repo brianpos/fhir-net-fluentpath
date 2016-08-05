@@ -10,7 +10,7 @@ using Hl7.FluentPath;
 using System;
 using System.Linq;
 using System.Collections.Generic;
-using Hl7.Fhir.Support;
+using Hl7.FluentPath.Support;
 using Hl7.FluentPath.Functions;
 using System.Text.RegularExpressions;
 
@@ -175,7 +175,7 @@ namespace Hl7.FluentPath.Expressions
 
             foreach (IValueProvider element in focus)
             {
-                var newFocus = FhirValueList.Create(element);
+                var newFocus = FluentValueList.Create(element);
                 var newContext = ctx.Nest(newFocus);
                 newContext.SetThis(newFocus);
 
@@ -191,7 +191,7 @@ namespace Hl7.FluentPath.Expressions
 
             foreach (IValueProvider element in focus)
             {
-                var newFocus = FhirValueList.Create(element);
+                var newFocus = FluentValueList.Create(element);
                 var newContext = ctx.Nest(newFocus);
                 newContext.SetThis(newFocus);
 
@@ -216,7 +216,7 @@ namespace Hl7.FluentPath.Expressions
 
                 foreach (IValueProvider element in current)
                 {
-                    var newFocus = FhirValueList.Create(element);
+                    var newFocus = FluentValueList.Create(element);
                     var newContext = ctx.Nest(newFocus);
                     newContext.SetThis(newFocus);
 
@@ -237,16 +237,16 @@ namespace Hl7.FluentPath.Expressions
 
             foreach (IValueProvider element in focus)
             {
-                var newFocus = FhirValueList.Create(element);
+                var newFocus = FluentValueList.Create(element);
                 var newContext = ctx.Nest(newFocus);
                 newContext.SetThis(newFocus);
 
                 var result = lambda(newContext, InvokeeFactory.EmptyArgs).BooleanEval();
-                if (result == null) return FhirValueList.Empty;
-                if (result == false) return FhirValueList.Create(false);
+                if (result == null) return FluentValueList.Empty;
+                if (result == false) return FluentValueList.Create(false);
             }
 
-            return FhirValueList.Create(true);
+            return FluentValueList.Create(true);
         }
 
         private static IEnumerable<IValueProvider> runAny(Closure ctx, IEnumerable<Invokee> arguments)
@@ -256,7 +256,7 @@ namespace Hl7.FluentPath.Expressions
 
             foreach (IValueProvider element in focus)
             {
-                var newFocus = FhirValueList.Create(element);
+                var newFocus = FluentValueList.Create(element);
                 var newContext = ctx.Nest(newFocus);
                 newContext.SetThis(newFocus);
 
@@ -265,10 +265,10 @@ namespace Hl7.FluentPath.Expressions
 
                 //if (result == null) return FhirValueList.Empty; -> otherwise this would not be where().exists()
                 //Patient.identifier.any(use = 'official') would return {} if ANY identifier has no 'use' element. Unexpected behaviour, I think
-                if (result == true) return FhirValueList.Create(true);
+                if (result == true) return FluentValueList.Create(true);
             }
 
-            return FhirValueList.Create(false);
+            return FluentValueList.Create(false);
         }
     }
 }

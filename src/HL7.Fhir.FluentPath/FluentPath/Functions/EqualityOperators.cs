@@ -148,7 +148,7 @@ namespace Hl7.FluentPath.Functions
                 return ((IElementNavigator)focus).Children();
             }
 
-            return FhirValueList.Empty;
+            return FluentValueList.Empty;
         }
 
         public static bool IsEquivalentTo(this string a, string b)
