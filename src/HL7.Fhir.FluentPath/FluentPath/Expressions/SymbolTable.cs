@@ -52,6 +52,7 @@ namespace Hl7.Fhir.FluentPath.Expressions
 
         public SymbolTable Parent { get; private set; }
 
+        [System.Diagnostics.DebuggerDisplay(@"\{{Signature.Name}}")]
         private class TableEntry
         {
             public CallSignature Signature { get; private set; }
