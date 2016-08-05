@@ -13,7 +13,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Hl7.Fhir.FluentPath;
+using Hl7.FluentPath;
 
 
 using boolean = System.Boolean;
@@ -25,7 +25,7 @@ using Hl7.Fhir.Tests.FhirPath;
 using System.Xml;
 using Hl7.Fhir.Support;
 using System.Xml.Linq;
-using Hl7.Fhir.FluentPath.Functions;
+using Hl7.FluentPath.Functions;
 
 static class ConverterExtensions
 {
@@ -173,7 +173,7 @@ public class FluentPathTests
     [TestMethod, TestCategory("FhirPathFromSpec")]
     public void TestPublishedTests()
     {
-        var files = Directory.EnumerateFiles(@"C:\git\fluentpath\tests\dstu2", "*.xml", SearchOption.TopDirectoryOnly);
+        var files = Directory.EnumerateFiles(@"C:\src\fluentpath\tests\dstu2", "*.xml", SearchOption.TopDirectoryOnly);
 
         foreach (var file in files)
         {
@@ -210,7 +210,7 @@ public class FluentPathTests
             DomainResource resource = null;
             if (!_cache.ContainsKey(inputfile))
             {
-                string basepath = @"C:\git\fluentpath\tests\dstu2\input\";
+                string basepath = @"C:\src\fluentpath\tests\dstu2\input\";
                 _cache.Add(inputfile, (DomainResource)(new FhirXmlParser().Parse<DomainResource>(File.ReadAllText(basepath + inputfile))));
             }
             resource = _cache[inputfile];
@@ -320,7 +320,7 @@ public class FluentPathTests
     [TestMethod, TestCategory("FhirPathFromSpec")]
     public void testExtensionDefinitions()
     {
-        Bundle b = (Bundle)FhirParser.ParseResourceFromXml(File.ReadAllText("TestData\\extension-definitions.xml"));
+        Bundle b = new FhirXmlParser().Parse<Bundle>(File.ReadAllText("TestData\\extension-definitions.xml"));
         foreach (Bundle.EntryComponent be in b.Entry)
         {
             testStructureDefinition((StructureDefinition)be.Resource);

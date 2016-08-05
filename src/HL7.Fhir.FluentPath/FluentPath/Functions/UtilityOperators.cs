@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Hl7.Fhir.FluentPath.Functions
+namespace Hl7.FluentPath.Functions
 {
     internal static class UtilityOperators
     {

@@ -6,18 +6,18 @@
  * available at https://raw.githubusercontent.com/ewoutkramer/fhir-net-api/master/LICENSE
  */
 
-using Hl7.Fhir.FluentPath.Parser;
-using Hl7.Fhir.FluentPath;
-using Hl7.Fhir.FluentPath.Expressions;
+using Hl7.FluentPath.Parser;
+using Hl7.FluentPath;
+using Hl7.FluentPath.Expressions;
 using Sprache;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Hl7.Fhir.FluentPath.Functions;
+using Hl7.FluentPath.Functions;
 
-namespace Hl7.Fhir.FluentPath
+namespace Hl7.FluentPath
 {
     public static class PathExpression
     {

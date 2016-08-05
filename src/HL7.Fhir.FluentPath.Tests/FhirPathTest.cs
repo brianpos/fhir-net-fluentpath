@@ -14,8 +14,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Sprache;
-using Hl7.Fhir.FluentPath;
-using Hl7.Fhir.FluentPath.Functions;
+using Hl7.FluentPath;
+using Hl7.FluentPath.Functions;
 
 namespace Hl7.Fhir.Tests.FhirPath
 {
@@ -33,7 +33,7 @@ namespace Hl7.Fhir.Tests.FhirPath
             // var navigator = new TreeNavigator(tree);
             // return navigator;
 
-            var patient = dstu2::Hl7.Fhir.Serialization.FhirParser.ParseFromXml(tpXml) as dstu2::Hl7.Fhir.Model.Resource;
+            var patient = new dstu2::Hl7.Fhir.Serialization.FhirXmlParser().Parse<dstu2::Hl7.Fhir.Model.Resource>(tpXml);
             return new ModelNavigator(patient);
         }
 

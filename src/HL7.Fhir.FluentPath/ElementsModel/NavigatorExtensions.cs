@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System;
 
-namespace Hl7.Fhir.FluentPath
+namespace Hl7.FluentPath
 {
     public static class NavigatorExtensions
     {

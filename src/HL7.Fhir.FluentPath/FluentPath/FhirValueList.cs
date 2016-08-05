@@ -9,7 +9,7 @@
 using System.Linq;
 using System.Collections.Generic;
 
-namespace Hl7.Fhir.FluentPath
+namespace Hl7.FluentPath
 {
     internal static class FhirValueList
     {

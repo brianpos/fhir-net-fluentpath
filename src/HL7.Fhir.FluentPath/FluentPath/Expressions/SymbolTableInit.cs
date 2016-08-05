@@ -6,15 +6,15 @@
  * available at https://raw.githubusercontent.com/ewoutkramer/fhir-net-api/master/LICENSE
  */
 
-using Hl7.Fhir.FluentPath;
+using Hl7.FluentPath;
 using System;
 using System.Linq;
 using System.Collections.Generic;
 using Hl7.Fhir.Support;
-using Hl7.Fhir.FluentPath.Functions;
+using Hl7.FluentPath.Functions;
 using System.Text.RegularExpressions;
 
-namespace Hl7.Fhir.FluentPath.Expressions
+namespace Hl7.FluentPath.Expressions
 {
     public static class SymbolTableInit
     {

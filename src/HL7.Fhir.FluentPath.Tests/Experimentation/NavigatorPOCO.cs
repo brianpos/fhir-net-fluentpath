@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Hl7.Fhir.FluentPath;
+using Hl7.FluentPath;
 using Hl7.Fhir.Support;
 
 namespace Hl7.Fhir.Tests.FhirPath

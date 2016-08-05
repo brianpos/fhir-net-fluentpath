@@ -1,4 +1,4 @@
-﻿namespace Hl7.Fhir.FluentPath
+﻿namespace Hl7.FluentPath
 {
     public interface INavigator<out T>
         where T : INavigator<T>

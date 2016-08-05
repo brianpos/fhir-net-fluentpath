@@ -6,14 +6,14 @@
  * available at https://raw.githubusercontent.com/ewoutkramer/fhir-net-api/master/LICENSE
  */
 
-using Hl7.Fhir.FluentPath.Functions;
+using Hl7.FluentPath.Functions;
 using Hl7.Fhir.Support;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using static Hl7.Fhir.FluentPath.PathExpression;
+using static Hl7.FluentPath.PathExpression;
 
-namespace Hl7.Fhir.FluentPath.Expressions
+namespace Hl7.FluentPath.Expressions
 {
     internal delegate IEnumerable<IValueProvider> Invokee(Closure context, IEnumerable<Invokee> arguments);
 
@@ -128,12 +128,12 @@ namespace Hl7.Fhir.FluentPath.Expressions
             };
         }
 
-        public static Invokee Return(Hl7.Fhir.FluentPath.IValueProvider value)
+        public static Invokee Return(Hl7.FluentPath.IValueProvider value)
         {
-            return (_, __) => (new[] { (Hl7.Fhir.FluentPath.IValueProvider)value });
+            return (_, __) => (new[] { (Hl7.FluentPath.IValueProvider)value });
         }
 
-        public static Invokee Return(IEnumerable<Hl7.Fhir.FluentPath.IValueProvider> value)
+        public static Invokee Return(IEnumerable<Hl7.FluentPath.IValueProvider> value)
         {
             return (_, __) => value;
         }

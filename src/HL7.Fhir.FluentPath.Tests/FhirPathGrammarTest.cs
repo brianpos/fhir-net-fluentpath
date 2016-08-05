@@ -8,11 +8,11 @@
 
 using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Hl7.Fhir.FluentPath;
+using Hl7.FluentPath;
 using Sprache;
 using System.Linq;
-using Hl7.Fhir.FluentPath.Parser;
-using Hl7.Fhir.FluentPath.Expressions;
+using Hl7.FluentPath.Parser;
+using Hl7.FluentPath.Expressions;
 
 namespace Hl7.Fhir.Tests.FhirPath
 {

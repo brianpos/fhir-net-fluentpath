@@ -13,8 +13,8 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Hl7.Fhir.FluentPath;
-using Hl7.Fhir.FluentPath.Expressions;
+using Hl7.FluentPath;
+using Hl7.FluentPath.Expressions;
 
 namespace Hl7.Fhir.Tests.FhirPath
 {

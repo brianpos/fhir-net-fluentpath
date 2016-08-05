@@ -8,9 +8,9 @@
 
 using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Hl7.Fhir.FluentPath;
+using Hl7.FluentPath;
 using Sprache;
-using Hl7.Fhir.FluentPath.Parser;
+using Hl7.FluentPath.Parser;
 
 namespace Hl7.Fhir.Tests.FhirPath
 {
