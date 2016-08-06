@@ -11,7 +11,7 @@ using System.Collections.Generic;
 
 namespace Hl7.FluentPath
 {
-    internal static class FluentValueList
+    public static class FluentValueList
     {
         public static IEnumerable<IValueProvider> Create(params object[] values)
         {
