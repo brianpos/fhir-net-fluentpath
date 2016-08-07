@@ -55,7 +55,7 @@ namespace Hl7.Fhir.Tests.FhirPath
                 if (_string != null) return _string;
 
                 if (_pocoElement is FhirDateTime)
-                    return ((FhirDateTime)_pocoElement).ToDateTimeOffset();
+                    return FluentPath.PartialDateTime.FromDateTime(((FhirDateTime)_pocoElement).ToDateTimeOffset());
                 else if (_pocoElement is dstu2.Hl7.Fhir.Model.Time)
                     return FluentPath.Time.Parse(((dstu2.Hl7.Fhir.Model.Time)_pocoElement).Value);
                 else if ((_pocoElement is dstu2.Hl7.Fhir.Model.Date))
